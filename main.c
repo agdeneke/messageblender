@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
     printf("Width: %i\n", width);
     printf("Height: %i\n", height);
 
+    img_save_pixels(argv[2], pixels, width, height, IMG_FMT_RGBA32);
+
     img_free_pixels(pixels);
 
     return 0;
