@@ -13,9 +13,6 @@ int main(int argc, char *argv[])
 
     unsigned char *pixels = img_load_pixels(argv[1], &width, &height, IMG_FMT_RGBA32);
 
-    printf("Width: %i\n", width);
-    printf("Height: %i\n", height);
-
     int i, j;
     for (i = 0; i < strlen(msg); i++) {
         for (j = 7; j >= 0; j--) {
