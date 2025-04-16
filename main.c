@@ -1,5 +1,6 @@
 #include <imago2.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define MESSAGE_SIZE 256
@@ -8,6 +9,11 @@ int main(int argc, char *argv[])
 {
     int width, height;
     char msg[MESSAGE_SIZE];
+
+    if (argc < 3) {
+        printf("Usage: messageblender <input file> <output file>\n");
+        exit(1);
+    }
 
     scanf("%s", msg);
 
