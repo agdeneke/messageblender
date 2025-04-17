@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     unsigned char *pixels = img_load_pixels(argv[1], &width, &height, IMG_FMT_RGBA32);
 
     if (argc >= 4 && !strcmp(argv[2], "-e")) {
-        scanf("%s", msg);
+        fgets(msg, MESSAGE_SIZE, stdin);
         encode_message(msg, pixels);
         img_save_pixels(argv[3], pixels, width, height, IMG_FMT_RGBA32);
     } else {
