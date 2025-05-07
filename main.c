@@ -8,7 +8,7 @@
 void encode_message(char *msg, unsigned char *pixels)
 {
     int i, j;
-    for (i = 0; i < strlen(msg); i++) {
+    for (i = 0; i < strlen(msg) + 1; i++) {
         for (j = 7; j >= 0; j--) {
             if ((msg[i] >> j & 1) == 1)
                 pixels[i * 8 + (7 - j)] |= 1;
@@ -25,6 +25,8 @@ void decode_message(char *msg, unsigned char *pixels)
         msg[i] = 0;
         for (j = 7; j >= 0; j--)
             msg[i] |= (pixels[i * 8 + (7 - j)] & 1) << j;
+        if (msg[i] == 0)
+            return;
     }
 }
 
